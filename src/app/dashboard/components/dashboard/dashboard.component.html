@@ -1,0 +1,15 @@
+<section class="container">
+  <h1 class="large text-primary">Dashboard</h1>
+  <p class="lead"><i class="fas fa-user"></i> Welcome {{ userDetails.name }}</p>
+
+  <div *ngIf="profile == null">
+    <a [routerLink]="['/profile/create-profile']" class="btn btn-danger"
+      ><i class="fas fa-user-circle text-primary"></i> Create Profile</a
+    >
+  </div>
+  <div *ngIf="profile != null">
+    <app-dashboard-action></app-dashboard-action>
+    <app-dashboard-exp-display></app-dashboard-exp-display>
+    <app-dashboard-edu-display></app-dashboard-edu-display>
+  </div>
+</section>
